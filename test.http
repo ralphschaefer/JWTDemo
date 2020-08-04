@@ -1,0 +1,33 @@
+## success
+GET http://localhost:8080/basicauth
+Authorization: Basic YWRtaW46YWRtaW4=
+
+### fail
+GET http://localhost:8080/basicauth
+Authorization: Basic YWRtaW46dGVzdA==
+
+### anonymous auth
+POST http://localhost:8080/anyone
+Content-Type: application/json
+
+{
+  "name": "der ewige max musterman",
+  "expiration": false
+}
+
+### api test fail
+GET http://localhost:8080/api/v1/test
+JWT: fgsdfgsdfgsdfg
+
+### api test expired
+GET http://localhost:8080/api/v1/test
+JWT: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTY1NTE4NjAsIm5iZiI6MTU5NjU0NDY2MCwiaWF0IjoxNTk2NTQ0NjYwLCJjbGF6eiI6Im15Lmp3dGRlbW8ucHJvZmlsZXMuVXNlciQiLCJuYW1lIjoiYWRtaW4ifQ.N6HEyoBed_cQBrNwM4GQmmDKOJviTNbviNVO-CXygtA
+
+
+### api test ok 2
+GET http://localhost:8080/api/v1/test
+JWT: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTY1NTQ3NzUsIm5iZiI6MTU5NjU0NzU3NSwiaWF0IjoxNTk2NTQ3NTc1LCJjbGF6eiI6Im15Lmp3dGRlbW8ucHJvZmlsZXMuQW5vbnltb3VzJCIsImZyb20iOiJsb2NhbGhvc3QiLCJhbm9ueW1vdXMiOiJtYXggbXVzdGVybWFuIn0.TN4Tobb0uQkvOQFu1Q0uyztI33zbNyfNpkcMtbOY5o8
+
+### api test ok no expiration
+GET http://localhost:8080/api/v1/test
+JWT: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1OTY1NDgzODIsImlhdCI6MTU5NjU0ODM4MiwiY2xhenoiOiJteS5qd3RkZW1vLnByb2ZpbGVzLkFub255bW91cyQiLCJmcm9tIjoibG9jYWxob3N0IiwiYW5vbnltb3VzIjoiZGVyIGV3aWdlIG1heCBtdXN0ZXJtYW4ifQ.WicMSA8HEAdn_BodCJ2_umwBeYxC0AXnNHXeOdYVuEE

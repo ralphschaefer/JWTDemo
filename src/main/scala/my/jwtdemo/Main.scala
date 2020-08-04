@@ -1,6 +1,10 @@
 package my.jwtdemo
 
-object Main extends App {
-  println("JWT Demo")
+import com.typesafe.scalalogging.StrictLogging
+
+object Main extends App with StrictLogging {
+  logger.info("JWT Demo")
+
+  new HttpServer
 }
 
