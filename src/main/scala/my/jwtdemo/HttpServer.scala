@@ -2,9 +2,7 @@ package my.jwtdemo
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives
-import akka.http.scaladsl.server.Directives._
 import akka.stream.SystemMaterializer
 import com.typesafe.scalalogging.StrictLogging
 import my.jwtdemo.endpoints.{AuthorizeAnonymous, AuthorizeBasic, ShowToken}

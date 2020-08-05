@@ -41,7 +41,7 @@ class JWT(val secretKey: String) {
 
   implicit val clock: Clock = Clock.systemUTC
 
-  def encode[A](content: Profile, expiration: Boolean = true) = {
+  def encode(content: Profile, expiration: Boolean = true) = {
     val algo = JwtAlgorithm.HS256
     val claimJson = JwtClaim()
       .issuedNow
